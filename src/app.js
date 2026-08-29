@@ -1,8 +1,8 @@
 import express from 'express';
 const app = express();
 
-app.get('/',(req,res)=>{
-    res.status(200).send('Hello from Infrastructure API ... ')
-})
+app.get('/', (req, res) => {
+  res.status(200).send('Hello from Infrastructure API ... ');
+});
 
 export default app;
