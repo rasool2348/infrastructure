@@ -1,0 +1,28 @@
+# Production stack: App only — connects to Neon Cloud (serverless)
+# Neon DB runs in Neon's cloud; it is NOT a Docker service.
+# Usage: docker compose -f docker-compose.prod.yml --env-file .env.production up --build -d
+
+services:
+  app:
+    build:
+      context: .
+      target: production
+    container_name: infrastructure-app-prod
+    ports:
+      - '${PORT:-3000}:3000'
+    env_file:
+      - .env.production
+    environment:
+      NODE_ENV: production
+      # Must point to Neon Cloud, e.g. postgres://...@ep-xxx.region.aws.neon.tech/neondb?sslmode=require
+      DATABASE_URL: ${DATABASE_URL}
+      PORT: ${PORT:-3000}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      ARCJET_KEY: ${ARCJET_KEY}
+      JWT_SECRET: ${JWT_SECRET}
+    restart: unless-stopped
+    # No neon-local service — production uses Neon serverless cloud only
+
+networks:
+  default:
+    name: infrastructure-prod

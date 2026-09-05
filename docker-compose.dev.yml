@@ -1,0 +1,54 @@
+# Development stack: App + Neon Local (ephemeral branches)
+# Usage: docker compose -f docker-compose.dev.yml --env-file .env.development up --build
+
+services:
+  neon-local:
+    image: neondatabase/neon_local:latest
+    container_name: neon-local
+    ports:
+      - '5432:5432'
+    environment:
+      NEON_API_KEY: ${NEON_API_KEY}
+      NEON_PROJECT_ID: ${NEON_PROJECT_ID}
+      # If set, ephemeral branch is created from this parent; otherwise project default
+      PARENT_BRANCH_ID: ${PARENT_BRANCH_ID:-}
+      # Ephemeral branch is deleted when this container stops
+      DELETE_BRANCH: ${DELETE_BRANCH:-true}
+    volumes:
+      - ./.neon_local/:/tmp/.neon_local
+      - ./.git/HEAD:/tmp/.git/HEAD:ro
+    healthcheck:
+      test: ['CMD-SHELL', 'exit 0']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  app:
+    build:
+      context: .
+      target: development
+    container_name: infrastructure-app-dev
+    ports:
+      - '${PORT:-3000}:3000'
+    env_file:
+      - .env.development
+    environment:
+      NODE_ENV: development
+      NEON_LOCAL: 'true'
+      NEON_LOCAL_HOST: neon-local
+      # Neon Local fixed credentials: https://neon.com/docs/local/neon-local
+      DATABASE_URL: postgres://neon:npg@neon-local:5432/${NEON_DATABASE:-neondb}
+    volumes:
+      - ./src:/app/src
+      - /app/node_modules
+      - ./drizzle:/app/drizzle
+      - ./logs:/app/logs
+    depends_on:
+      neon-local:
+        condition: service_started
+    restart: unless-stopped
+
+networks:
+  default:
+    name: infrastructure-dev
