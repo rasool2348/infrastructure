@@ -6,13 +6,13 @@
 
 ## تفاوت Development و Production
 
-| موضوع | Development | Production |
-|--------|-------------|------------|
-| دیتابیس | Neon Local (پروکسی Docker) | Neon Cloud URL |
-| فایل env | `.env.development` | `.env.production` |
-| Compose | `docker-compose.dev.yml` | `docker-compose.prod.yml` |
+| موضوع          | Development                                  | Production                           |
+| -------------- | -------------------------------------------- | ------------------------------------ |
+| دیتابیس        | Neon Local (پروکسی Docker)                   | Neon Cloud URL                       |
+| فایل env       | `.env.development`                           | `.env.production`                    |
+| Compose        | `docker-compose.dev.yml`                     | `docker-compose.prod.yml`            |
 | `DATABASE_URL` | `postgres://neon:npg@neon-local:5432/neondb` | `postgresql://...@....neon.tech/...` |
-| برنچ DB | ephemeral (با استاپ کانتینر پاک می‌شود) | برنچ پایدار در Neon |
+| برنچ DB        | ephemeral (با استاپ کانتینر پاک می‌شود)      | برنچ پایدار در Neon                  |
 
 > **نکته مهم:** نام کاربری/رمز Neon Local همیشه `neon` / `npg` است (ثابت در پروکسی). این با یوزر/پسورد واقعی Neon Cloud فرق دارد.
 
@@ -134,11 +134,11 @@ docker compose -f docker-compose.prod.yml up --build -d
 1. اول `.env.${NODE_ENV}` (مثلاً `.env.development` یا `.env.production`)
 2. سپس fallback به `.env`
 
-| محیط | منبع `DATABASE_URL` |
-|------|---------------------|
-| Dev (Compose) | override در `docker-compose.dev.yml` → `neon-local` |
-| Prod (Compose) | از `.env.production` یا env سیستم → Neon Cloud |
-| بدون Docker | فایل `.env.development` / `.env.production` |
+| محیط           | منبع `DATABASE_URL`                                 |
+| -------------- | --------------------------------------------------- |
+| Dev (Compose)  | override در `docker-compose.dev.yml` → `neon-local` |
+| Prod (Compose) | از `.env.production` یا env سیستم → Neon Cloud      |
+| بدون Docker    | فایل `.env.development` / `.env.production`         |
 
 در Dev، درایور `@neondatabase/serverless` با `NEON_LOCAL=true` روی HTTP به پروکسی وصل می‌شود (`http://neon-local:5432/sql`).
 

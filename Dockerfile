@@ -1,26 +1,42 @@
-# syntax=docker/dockerfile:1
+# Multi-stage Dockerfile for Node.js acquisitions application
 
-FROM node:22-alpine AS base
+# Base image with Node.js
+FROM node:20-alpine AS base
+
+# Set working directory
 WORKDIR /app
 
-# Native build tools for bcrypt
-RUN apk add --no-cache python3 make g++
+# Copy package files
+COPY package*.json ./
 
-COPY package.json package-lock.json ./
+# Install dependencies
+RUN npm ci --only=production && npm cache clean --force
 
-# ---------- Development ----------
-FROM base AS development
-RUN npm ci
+# Copy source code
 COPY . .
-ENV NODE_ENV=development
+
+# Create non-root user for security
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nodejs -u 1001
+
+# Change ownership of the app directory
+RUN chown -R nodejs:nodejs /app
+USER nodejs
+
+# Expose the port
 EXPOSE 3000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:3000/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) }).on('error', () => { process.exit(1) })"
+
+# Development stage
+FROM base AS development
+USER root
+RUN npm ci && npm cache clean --force
+USER nodejs
 CMD ["npm", "run", "dev"]
 
-# ---------- Production ----------
+# Production stage
 FROM base AS production
-RUN npm ci --omit=dev && npm cache clean --force
-COPY . .
-ENV NODE_ENV=production
-EXPOSE 3000
-USER node
-CMD ["npm", "run", "start"]
+CMD ["npm", "run","start"]

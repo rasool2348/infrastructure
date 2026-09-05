@@ -10,3 +10,4 @@ logs
 # OS / IDE
 .DS_Store
 *.log
+.neon_local/

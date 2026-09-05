@@ -2,7 +2,7 @@
 
 # Development startup script for Acquisition App with Neon Local
 # This script starts the application in development mode with Neon Local
-
+echo "using git bash to start the file"
 echo "🚀 Starting Acquisition App in Development Mode"
 echo "================================================"
 

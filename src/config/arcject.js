@@ -1,4 +1,4 @@
-import '#config/env.js';
+import 'dotenv/config';
 import arcjet, { shield, detectBot, slidingWindow } from '@arcjet/node';
 
 const aj = arcjet({
