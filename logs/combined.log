@@ -1634,3 +1634,42 @@
 {"level":"info","message":"Getting user by id: 5","service":"infrastructure-api","timestamp":"2026-09-13T13:33:09.420Z"}
 {"level":"info","message":"User karim.kakaee@gmail.com retrieved successfully","service":"infrastructure-api","timestamp":"2026-09-13T13:33:10.266Z"}
 {"level":"info","message":"::1 - - [13/Sep/2026:13:33:10 +0000] \"GET /api/users/5 HTTP/1.1\" 200 198 \"-\" \"bruno-runtime/4.1.0\"","service":"infrastructure-api","timestamp":"2026-09-13T13:33:10.267Z"}
+{"level":"info","message":"User authenticated: rasool.kakaee@gmail.com (admin)","service":"infrastructure-api","timestamp":"2026-09-13T13:37:44.430Z"}
+{"level":"info","message":"Getting users...","service":"infrastructure-api","timestamp":"2026-09-13T13:37:44.433Z"}
+{"level":"info","message":"::1 - - [13/Sep/2026:13:37:52 +0000] \"GET /api/users HTTP/1.1\" 200 1405 \"-\" \"bruno-runtime/4.1.0\"","service":"infrastructure-api","timestamp":"2026-09-13T13:37:52.070Z"}
+{"level":"info","message":"User rasool.kakaee@gmail.com authenticated successfully","service":"infrastructure-api","timestamp":"2026-09-13T13:38:07.081Z"}
+{"level":"info","message":"User signed in successfully: rasool.kakaee@gmail.com","service":"infrastructure-api","timestamp":"2026-09-13T13:38:07.083Z"}
+{"level":"info","message":"::1 - - [13/Sep/2026:13:38:07 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 122 \"-\" \"bruno-runtime/4.1.0\"","service":"infrastructure-api","timestamp":"2026-09-13T13:38:07.085Z"}
+{"level":"info","message":"User authenticated: rasool.kakaee@gmail.com (admin)","service":"infrastructure-api","timestamp":"2026-09-13T13:40:52.614Z"}
+{"level":"info","message":"Updating user: 1","service":"infrastructure-api","timestamp":"2026-09-13T13:40:52.616Z"}
+{"level":"info","message":"User rasool.kakaee@gmail.com updated successfully","service":"infrastructure-api","timestamp":"2026-09-13T13:40:55.351Z"}
+{"level":"info","message":"User rasool.kakaee@gmail.com updated successfully","service":"infrastructure-api","timestamp":"2026-09-13T13:40:55.351Z"}
+{"level":"info","message":"::1 - - [13/Sep/2026:13:40:55 +0000] \"PUT /api/users/1 HTTP/1.1\" 200 209 \"-\" \"bruno-runtime/4.1.0\"","service":"infrastructure-api","timestamp":"2026-09-13T13:40:55.352Z"}
+{"level":"info","message":"User authenticated: rasool.kakaee@gmail.com (admin)","service":"infrastructure-api","timestamp":"2026-09-13T13:41:00.935Z"}
+{"level":"info","message":"Getting users...","service":"infrastructure-api","timestamp":"2026-09-13T13:41:00.935Z"}
+{"level":"info","message":"::1 - - [13/Sep/2026:13:41:02 +0000] \"GET /api/users HTTP/1.1\" 200 1415 \"-\" \"bruno-runtime/4.1.0\"","service":"infrastructure-api","timestamp":"2026-09-13T13:41:02.330Z"}
+{"level":"info","message":"User authenticated: rasool.kakaee@gmail.com (admin)","service":"infrastructure-api","timestamp":"2026-09-13T13:41:23.025Z"}
+{"level":"info","message":"Deleting user: 11","service":"infrastructure-api","timestamp":"2026-09-13T13:41:23.025Z"}
+{"level":"info","message":"User karim.ka@gmail.com deleted successfully","service":"infrastructure-api","timestamp":"2026-09-13T13:41:25.469Z"}
+{"level":"info","message":"User karim.ka@gmail.com deleted successfully","service":"infrastructure-api","timestamp":"2026-09-13T13:41:25.470Z"}
+{"level":"info","message":"::1 - - [13/Sep/2026:13:41:25 +0000] \"DELETE /api/users/11 HTTP/1.1\" 200 114 \"-\" \"bruno-runtime/4.1.0\"","service":"infrastructure-api","timestamp":"2026-09-13T13:41:25.471Z"}
+{"level":"info","message":"User authenticated: rasool.kakaee@gmail.com (admin)","service":"infrastructure-api","timestamp":"2026-09-13T13:41:32.443Z"}
+{"level":"info","message":"Getting users...","service":"infrastructure-api","timestamp":"2026-09-13T13:41:32.443Z"}
+{"level":"info","message":"::1 - - [13/Sep/2026:13:41:33 +0000] \"GET /api/users HTTP/1.1\" 200 1268 \"-\" \"bruno-runtime/4.1.0\"","service":"infrastructure-api","timestamp":"2026-09-13T13:41:33.844Z"}
+{"level":"info","message":"Hello from Infrastructure API ... ","service":"infrastructure-api","timestamp":"2026-09-13T14:06:23.562Z"}
+{"level":"info","message":"::1 - - [13/Sep/2026:14:06:23 +0000] \"GET / HTTP/1.1\" 200 34 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36\"","service":"infrastructure-api","timestamp":"2026-09-13T14:06:23.569Z"}
+{"level":"info","message":"::1 - - [13/Sep/2026:14:06:27 +0000] \"GET /health HTTP/1.1\" 200 74 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36\"","service":"infrastructure-api","timestamp":"2026-09-13T14:06:27.409Z"}
+{"level":"info","message":"::1 - - [13/Sep/2026:14:06:27 +0000] \"GET /favicon.ico HTTP/1.1\" 404 29 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36\"","service":"infrastructure-api","timestamp":"2026-09-13T14:06:27.670Z"}
+{"level":"info","message":"::1 - - [13/Sep/2026:14:06:32 +0000] \"GET /non HTTP/1.1\" 404 29 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36\"","service":"infrastructure-api","timestamp":"2026-09-13T14:06:32.238Z"}
+{"level":"info","message":"::1 - - [13/Sep/2026:14:06:39 +0000] \"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1\" 404 29 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36\"","service":"infrastructure-api","timestamp":"2026-09-13T14:06:39.462Z"}
+{"level":"info","message":"::1 - - [13/Sep/2026:14:06:42 +0000] \"GET /non HTTP/1.1\" 404 29 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36\"","service":"infrastructure-api","timestamp":"2026-09-13T14:06:42.934Z"}
+{"level":"info","message":"::1 - - [13/Sep/2026:14:06:43 +0000] \"GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1\" 404 29 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36\"","service":"infrastructure-api","timestamp":"2026-09-13T14:06:43.174Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [13/Sep/2026:14:12:57 +0000] \"GET /health HTTP/1.1\" 200 73 \"-\" \"-\"","service":"infrastructure-api","timestamp":"2026-09-13T14:12:57.139Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [13/Sep/2026:14:12:57 +0000] \"GET /api HTTP/1.1\" 200 28 \"-\" \"-\"","service":"infrastructure-api","timestamp":"2026-09-13T14:12:57.191Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [13/Sep/2026:14:12:57 +0000] \"GET /nonexsistent HTTP/1.1\" 404 29 \"-\" \"-\"","service":"infrastructure-api","timestamp":"2026-09-13T14:12:57.234Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [13/Sep/2026:14:17:40 +0000] \"GET /health HTTP/1.1\" 200 73 \"-\" \"-\"","service":"infrastructure-api","timestamp":"2026-09-13T14:17:40.797Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [13/Sep/2026:14:17:40 +0000] \"GET /api HTTP/1.1\" 200 28 \"-\" \"-\"","service":"infrastructure-api","timestamp":"2026-09-13T14:17:40.839Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [13/Sep/2026:14:17:40 +0000] \"GET /nonexsistent HTTP/1.1\" 404 29 \"-\" \"-\"","service":"infrastructure-api","timestamp":"2026-09-13T14:17:40.866Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [13/Sep/2026:14:19:26 +0000] \"GET /health HTTP/1.1\" 200 73 \"-\" \"-\"","service":"infrastructure-api","timestamp":"2026-09-13T14:19:26.944Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [13/Sep/2026:14:19:27 +0000] \"GET /api HTTP/1.1\" 200 28 \"-\" \"-\"","service":"infrastructure-api","timestamp":"2026-09-13T14:19:27.291Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [13/Sep/2026:14:19:27 +0000] \"GET /nonexsistent HTTP/1.1\" 404 29 \"-\" \"-\"","service":"infrastructure-api","timestamp":"2026-09-13T14:19:27.516Z"}
