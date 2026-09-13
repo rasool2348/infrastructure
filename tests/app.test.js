@@ -16,10 +16,7 @@ describe('API Endpoints', () => {
     it('should return API message', async () => {
       const response = await request(app).get('/api').expect(200);
 
-      expect(response.body).toHaveProperty(
-        'message',
-        'API is running'
-      );
+      expect(response.body).toHaveProperty('message', 'API is running');
     });
   });
 
@@ -27,10 +24,7 @@ describe('API Endpoints', () => {
     it('should return 404 for non-existent routes', async () => {
       const response = await request(app).get('/nonexsistent').expect(404);
 
-      expect(response.body).toHaveProperty(
-        'message',
-        'Route not found'
-      );
+      expect(response.body).toHaveProperty('message', 'Route not found');
     });
   });
 });
